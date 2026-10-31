@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Throw Food For Animals Discord Server (official) – Updates &amp; Codes</title>
+  <meta name="description" content="Join the official Throw Food For Animals Discord server for Roblox updates, news, codes and community chat. discord.gg/throwfoodforanimals">
+  <meta name="keywords" content="throw food for animals, throw food for animals discord, throw food for animals roblox, throw food for animals codes, throw food for animals updates">
+  <meta name="robots" content="index, follow">
+  <!-- Change this if your site URL is different -->
+  <link rel="canonical" href="https://throwfoodforanimals.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Throw Food For Animals Discord Server (official)">
+  <meta property="og:description" content="Roblox Throw Food For Animals updates, news, codes and community. Join discord.gg/throwfoodforanimals">
+  <meta property="og:url" content="https://throwfoodforanimals.vercel.app/">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Throw Food For Animals Discord Server",
+        "url": "https://throwfoodforanimals.vercel.app/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is there a Throw Food For Animals Discord server?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The official Throw Food For Animals Discord server is discord.gg/throwfoodforanimals. It posts game updates, news and codes." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this the official Throw Food For Animals Discord?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. It is a fan-made, official community server and is not run by the game's developers or by Roblox." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I join the Throw Food For Animals Discord?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Open discord.gg/throwfoodforanimals in your browser or the Discord app and click Accept Invite." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0f1420;
+      --card: #182033;
+      --text: #eef2ff;
+      --muted: #a9b3cc;
+      --accent: #5865f2;
+      --accent-hover: #4752c4;
+      --green: #57d68d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 16px; }
+    .hero { text-align: center; padding: 32px 0 40px; }
+    .emoji { font-size: 64px; line-height: 1; }
+    h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.15; margin: 16px 0 8px; }
+    .tag {
+      display: inline-block; font-size: 13px; font-weight: 600;
+      color: var(--green); border: 1px solid var(--green);
+      border-radius: 999px; padding: 2px 12px; margin-bottom: 12px;
+    }
+    .lead { color: var(--muted); font-size: 18px; margin: 0 auto 28px; max-width: 560px; }
+    .btn {
+      display: inline-block; background: var(--accent); color: #fff;
+      text-decoration: none; font-weight: 700; font-size: 18px;
+      padding: 14px 32px; border-radius: 12px; transition: background .15s;
+    }
+    .btn:hover { background: var(--accent-hover); }
+    .invite { display: block; margin-top: 12px; color: var(--muted); font-size: 15px; }
+    section { background: var(--card); border-radius: 16px; padding: 24px; margin-bottom: 20px; }
+    h2 { font-size: 22px; margin: 0 0 12px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    details { border-top: 1px solid #2a3450; padding: 12px 0; }
+    details:first-of-type { border-top: none; }
+    summary { cursor: pointer; font-weight: 600; }
+    details p { color: var(--muted); margin: 8px 0 0; }
+    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px 16px 40px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="emoji" aria-hidden="true">🍎🐘</div>
+      <h1>Throw Food For Animals Discord Server</h1>
+      <span class="tag">official fan community</span>
+      <p class="lead">The place for <strong>Throw Food For Animals</strong> (Roblox) updates, news, codes and chatting with other players.</p>
+      <a class="btn" href="https://discord.gg/throwfoodforanimals" rel="noopener">Join the Discord</a>
+      <span class="invite">discord.gg/throwfoodforanimals</span>
+    </header>
+
+    <section>
+      <h2>What you get in the server</h2>
+      <ul>
+        <li>Fast alerts for every new Throw Food For Animals update</li>
+        <li>New codes as soon as they come out</li>
+        <li>Tips, tricks and guides from other players</li>
+        <li>A friendly place to chat, trade ideas and share clips</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>About Throw Food For Animals</h2>
+      <p>Throw Food For Animals is a Roblox game where you throw food to feed animals. This Discord server is a fan-made hub that keeps players up to date with everything happening in the game.</p>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <details>
+        <summary>Is there a Throw Food For Animals Discord server?</summary>
+        <p>Yes. Join at discord.gg/throwfoodforanimals for updates, news and codes.</p>
+      </details>
+      <details>
+        <summary>Is this the official server?</summary>
+        <p>No. It's an official, fan-made community. It is not run by the game's developers or by Roblox.</p>
+      </details>
+      <details>
+        <summary>How do I join?</summary>
+        <p>Click the "Join the Discord" button above, or open discord.gg/throwfoodforanimals in the Discord app.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    official fan site. Not affiliated with Roblox Corporation or the developers of Throw Food For Animals.
+  </footer>
+</body>
+</html>
