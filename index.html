@@ -7,7 +7,6 @@
   <meta name="description" content="Join the Throw Food For Animals Discord server for Roblox updates, news, codes and community chat. discord.gg/throwfoodforanimals">
   <meta name="keywords" content="throw food for animals, throw food for animals discord, throw food for animals roblox, throw food for animals codes, throw food for animals updates">
   <meta name="robots" content="index, follow">
-  <!-- Change this if your site URL is different -->
   <link rel="canonical" href="https://throwfoodforanimals.vercel.app/">
 
   <meta property="og:type" content="website">
@@ -15,6 +14,7 @@
   <meta property="og:description" content="Roblox Throw Food For Animals updates, news, codes and community. Join discord.gg/throwfoodforanimals">
   <meta property="og:url" content="https://throwfoodforanimals.vercel.app/">
   <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#7cc6ff">
 
   <script type="application/ld+json">
   {
@@ -49,94 +49,402 @@
   }
   </script>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #0f1420;
-      --card: #182033;
-      --text: #eef2ff;
-      --muted: #a9b3cc;
-      --accent: #5865f2;
-      --accent-hover: #4752c4;
-      --green: #57d68d;
+      --ink: #1b2233;
+      --sky-top: #5fb8ff;
+      --sky-bottom: #c9ecff;
+      --grass: #62c935;
+      --grass-dark: #3f9a22;
+      --dirt: #8a5a2e;
+      --dirt-dark: #6b4220;
+      --yellow: #ffd23f;
+      --yellow-dark: #e0a800;
+      --blurple: #5865f2;
+      --blurple-dark: #3b44b8;
+      --paper: #fffdf6;
+      --muted: #4a5470;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      font-family: "Nunito", system-ui, sans-serif;
+      font-weight: 600;
+      color: var(--ink);
+      background: var(--dirt);
+      line-height: 1.55;
+      overflow-x: hidden;
     }
-    main { max-width: 760px; margin: 0 auto; padding: 48px 16px; }
-    .hero { text-align: center; padding: 32px 0 40px; }
-    .emoji { font-size: 64px; line-height: 1; }
-    h1 { font-size: clamp(28px, 6vw, 44px); line-height: 1.15; margin: 16px 0 8px; }
-    .tag {
-      display: inline-block; font-size: 13px; font-weight: 600;
-      color: var(--green); border: 1px solid var(--green);
-      border-radius: 999px; padding: 2px 12px; margin-bottom: 12px;
+    h1, h2, h3, .btn, .badge { font-family: "Lilita One", "Nunito", sans-serif; font-weight: 400; letter-spacing: .5px; }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 96px 16px 180px;
+      overflow: hidden;
+      /* bg.jpg = your in-game screenshot. If it's missing, the sky gradient shows instead. */
+      background:
+        linear-gradient(180deg, rgba(20, 60, 120, .35) 0%, rgba(20, 60, 120, .1) 55%, rgba(0, 0, 0, 0) 100%),
+        url("bg.jpg") center / cover no-repeat,
+        linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 100%);
     }
-    .lead { color: var(--muted); font-size: 18px; margin: 0 auto 28px; max-width: 560px; }
+
+    .cloud {
+      position: absolute;
+      background: #fff;
+      border-radius: 999px;
+      opacity: .9;
+      animation: drift linear infinite;
+    }
+    .cloud::before, .cloud::after {
+      content: ""; position: absolute; background: #fff; border-radius: 50%;
+    }
+    .cloud.c1 { width: 180px; height: 48px; top: 12%; left: -200px; animation-duration: 60s; }
+    .cloud.c1::before { width: 80px; height: 80px; top: -40px; left: 30px; }
+    .cloud.c1::after  { width: 60px; height: 60px; top: -28px; left: 90px; }
+    .cloud.c2 { width: 130px; height: 36px; top: 28%; left: -160px; animation-duration: 80s; animation-delay: -30s; opacity: .7; }
+    .cloud.c2::before { width: 60px; height: 60px; top: -30px; left: 20px; }
+    .cloud.c2::after  { width: 44px; height: 44px; top: -20px; left: 68px; }
+    @keyframes drift { to { transform: translateX(calc(100vw + 400px)); } }
+
+    .food {
+      position: absolute;
+      font-size: clamp(32px, 5vw, 56px);
+      filter: drop-shadow(0 6px 0 rgba(0, 0, 0, .18));
+      animation: bob 4s ease-in-out infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+    .food.f1 { top: 18%; left: 8%;  animation-delay: 0s;   transform: rotate(-12deg); }
+    .food.f2 { top: 22%; right: 9%; animation-delay: -1s;  }
+    .food.f3 { top: 58%; left: 5%;  animation-delay: -2s;  }
+    .food.f4 { top: 54%; right: 6%; animation-delay: -3s;  }
+    @keyframes bob {
+      0%, 100% { translate: 0 0; rotate: -8deg; }
+      50%      { translate: 0 -18px; rotate: 8deg; }
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--ink);
+      font-size: 18px;
+      padding: 6px 18px;
+      border: 3px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: 0 5px 0 var(--ink);
+      transform: rotate(-3deg);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2;
+      margin: 0 0 18px;
+      font-size: clamp(44px, 10vw, 104px);
+      line-height: .95;
+      color: #fff;
+      -webkit-text-stroke: 3px var(--ink);
+      paint-order: stroke fill;
+      text-shadow: 0 6px 0 var(--ink), 0 14px 24px rgba(0, 0, 0, .25);
+    }
+    h1 .line2 {
+      display: block;
+      color: var(--yellow);
+      font-size: .55em;
+      margin-top: 10px;
+    }
+
+    .lead {
+      position: relative;
+      z-index: 2;
+      max-width: 560px;
+      margin: 0 auto 32px;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--ink);
+      background: rgba(255, 253, 246, .92);
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      padding: 12px 20px;
+      box-shadow: 0 5px 0 var(--ink);
+    }
+
     .btn {
-      display: inline-block; background: var(--accent); color: #fff;
-      text-decoration: none; font-weight: 700; font-size: 18px;
-      padding: 14px 32px; border-radius: 12px; transition: background .15s;
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--blurple);
+      color: #fff;
+      text-decoration: none;
+      font-size: clamp(22px, 4vw, 28px);
+      padding: 16px 40px 18px;
+      border: 3px solid var(--ink);
+      border-radius: 18px;
+      box-shadow: 0 8px 0 var(--blurple-dark), 0 8px 0 3px var(--ink);
+      transition: transform .1s, box-shadow .1s;
     }
-    .btn:hover { background: var(--accent-hover); }
-    .invite { display: block; margin-top: 12px; color: var(--muted); font-size: 15px; }
-    section { background: var(--card); border-radius: 16px; padding: 24px; margin-bottom: 20px; }
-    h2 { font-size: 22px; margin: 0 0 12px; }
-    ul { margin: 0; padding-left: 20px; }
-    li { margin-bottom: 6px; }
-    details { border-top: 1px solid #2a3450; padding: 12px 0; }
-    details:first-of-type { border-top: none; }
-    summary { cursor: pointer; font-weight: 600; }
-    details p { color: var(--muted); margin: 8px 0 0; }
-    footer { text-align: center; color: var(--muted); font-size: 13px; padding: 24px 16px 40px; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 0 var(--blurple-dark), 0 10px 0 3px var(--ink); }
+    .btn:active { transform: translateY(6px); box-shadow: 0 2px 0 var(--blurple-dark), 0 2px 0 3px var(--ink); }
+    .btn.yellow { background: var(--yellow); color: var(--ink); box-shadow: 0 8px 0 var(--yellow-dark), 0 8px 0 3px var(--ink); }
+    .btn.yellow:hover { box-shadow: 0 10px 0 var(--yellow-dark), 0 10px 0 3px var(--ink); }
+    .btn.yellow:active { box-shadow: 0 2px 0 var(--yellow-dark), 0 2px 0 3px var(--ink); }
+
+    .invite {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      margin-top: 22px;
+      font-weight: 900;
+      color: #fff;
+      background: rgba(27, 34, 51, .75);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 15px;
+    }
+
+    /* Grass + dirt ground at the bottom of the hero */
+    .ground {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 120px;
+      background:
+        linear-gradient(var(--grass) 0 34px, var(--grass-dark) 34px 44px, transparent 44px),
+        repeating-linear-gradient(90deg, var(--dirt) 0 48px, var(--dirt-dark) 48px 52px);
+      border-top: 4px solid var(--ink);
+    }
+    .ground::before {
+      /* blocky grass bumps */
+      content: "";
+      position: absolute;
+      top: -16px; left: 0; right: 0;
+      height: 16px;
+      background: repeating-linear-gradient(90deg, var(--grass) 0 32px, transparent 32px 64px);
+    }
+
+    /* ---------- CONTENT ---------- */
+    .dirt-area {
+      background:
+        radial-gradient(circle at 20% 30%, rgba(0, 0, 0, .08) 0 6px, transparent 7px) 0 0 / 90px 90px,
+        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, .05) 0 5px, transparent 6px) 0 0 / 120px 120px,
+        var(--dirt);
+      padding: 56px 16px 24px;
+    }
+    .wrap { max-width: 1000px; margin: 0 auto; }
+
+    .panel {
+      background: var(--paper);
+      border: 4px solid var(--ink);
+      border-radius: 24px;
+      box-shadow: 0 10px 0 var(--ink);
+      padding: 32px clamp(18px, 4vw, 40px);
+      margin-bottom: 48px;
+    }
+    .panel h2 {
+      font-size: clamp(30px, 5vw, 42px);
+      margin: 0 0 22px;
+      line-height: 1.05;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .tile {
+      border: 3px solid var(--ink);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 6px 0 var(--ink);
+      transition: transform .15s;
+    }
+    .tile:hover { transform: translateY(-4px) rotate(-1deg); }
+    .tile .icon { font-size: 40px; line-height: 1; display: block; margin-bottom: 10px; }
+    .tile h3 { font-size: 22px; margin: 0 0 6px; }
+    .tile p { margin: 0; color: var(--muted); font-size: 15px; }
+    .t1 { background: #ffe9a8; }
+    .t2 { background: #c8f2b0; }
+    .t3 { background: #c7e6ff; }
+    .t4 { background: #ffd0dc; }
+
+    .steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+    .steps li {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 18px;
+      font-weight: 800;
+    }
+    .steps .num {
+      flex: none;
+      width: 48px; height: 48px;
+      display: grid; place-items: center;
+      font-family: "Lilita One", sans-serif;
+      font-size: 24px;
+      background: var(--grass);
+      color: #fff;
+      -webkit-text-stroke: 1.5px var(--ink);
+      paint-order: stroke fill;
+      border: 3px solid var(--ink);
+      border-radius: 14px;
+      box-shadow: 0 4px 0 var(--ink);
+    }
+
+    details {
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      margin-bottom: 14px;
+      background: #fff;
+      box-shadow: 0 5px 0 var(--ink);
+      overflow: hidden;
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 16px 20px;
+      font-weight: 900;
+      font-size: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      font-family: "Lilita One", sans-serif;
+      font-size: 28px;
+      line-height: 1;
+      transition: transform .2s;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { margin: 0; padding: 0 20px 18px; color: var(--muted); font-size: 16px; }
+
+    .cta {
+      text-align: center;
+      background: var(--grass);
+      background-image: linear-gradient(var(--grass) 0 70%, var(--grass-dark) 70%);
+    }
+    .cta h2 {
+      color: #fff;
+      -webkit-text-stroke: 2px var(--ink);
+      paint-order: stroke fill;
+      text-shadow: 0 4px 0 var(--ink);
+    }
+    .cta p { font-weight: 800; font-size: 18px; margin: -8px 0 28px; }
+
+    footer {
+      text-align: center;
+      color: #f3e2cc;
+      font-size: 13px;
+      padding: 8px 16px 40px;
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding-top: 72px; }
+      .food.f3, .food.f4 { display: none; }
+      .steps li { font-size: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .cloud, .food { animation: none; }
+      html { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header class="hero">
-      <div class="emoji" aria-hidden="true">🍎🐘</div>
-      <h1>Throw Food For Animals Discord Server</h1>
-      <span class="tag">#1 fan community</span>
-      <p class="lead">The place for <strong>Throw Food For Animals</strong> (Roblox) updates, news, codes and chatting with other players.</p>
-      <a class="btn" href="https://discord.gg/throwfoodforanimals" rel="noopener">Join the Discord</a>
-      <span class="invite">discord.gg/throwfoodforanimals</span>
-    </header>
+  <header class="hero">
+    <div class="cloud c1" aria-hidden="true"></div>
+    <div class="cloud c2" aria-hidden="true"></div>
+    <span class="food f1" aria-hidden="true">🍎</span>
+    <span class="food f2" aria-hidden="true">🍌</span>
+    <span class="food f3" aria-hidden="true">🥕</span>
+    <span class="food f4" aria-hidden="true">🍉</span>
 
-    <section>
-      <h2>What you get in the server</h2>
-      <ul>
-        <li>Fast alerts for every new Throw Food For Animals update</li>
-        <li>New codes as soon as they come out</li>
-        <li>Tips, tricks and guides from other players</li>
-        <li>A friendly place to chat, trade ideas and share clips</li>
-      </ul>
-    </section>
+    <span class="badge">Fan Community</span>
+    <h1>Throw Food<br>For Animals<span class="line2">Discord Server</span></h1>
+    <p class="lead">Updates, codes, giveaways and news for the Roblox game <strong>Throw Food For Animals</strong>. All in one place.</p>
+    <a class="btn" href="https://discord.gg/throwfoodforanimals" rel="noopener">Join the Discord</a>
+    <span class="invite">discord.gg/throwfoodforanimals</span>
 
-    <section>
-      <h2>About Throw Food For Animals</h2>
-      <p>Throw Food For Animals is a Roblox game where you throw food to feed animals. This Discord server is a fan-made hub that keeps players up to date with everything happening in the game.</p>
-    </section>
+    <div class="ground" aria-hidden="true"></div>
+  </header>
 
-    <section>
-      <h2>FAQ</h2>
-      <details>
-        <summary>Is there a Throw Food For Animals Discord server?</summary>
-        <p>Yes. Join at discord.gg/throwfoodforanimals for updates, news and codes.</p>
-      </details>
-      <details>
-        <summary>Who runs this server?</summary>
-        <p>It's a fan-made community run by players, not by the game's developers or by Roblox.</p>
-      </details>
-      <details>
-        <summary>How do I join?</summary>
-        <p>Click the "Join the Discord" button above, or open discord.gg/throwfoodforanimals in the Discord app.</p>
-      </details>
-    </section>
-  </main>
+  <div class="dirt-area">
+    <main class="wrap">
+      <section class="panel">
+        <h2>What's inside the server</h2>
+        <div class="grid">
+          <div class="tile t1">
+            <span class="icon" aria-hidden="true">📢</span>
+            <h3>Game Updates</h3>
+            <p>Find out about every new Throw Food For Animals update first.</p>
+          </div>
+          <div class="tile t2">
+            <span class="icon" aria-hidden="true">🎟️</span>
+            <h3>New Codes</h3>
+            <p>Fresh codes posted as soon as they drop.</p>
+          </div>
+          <div class="tile t3">
+            <span class="icon" aria-hidden="true">🎉</span>
+            <h3>Giveaways &amp; Events</h3>
+            <p>Join giveaways and community events.</p>
+          </div>
+          <div class="tile t4">
+            <span class="icon" aria-hidden="true">💬</span>
+            <h3>Chat &amp; Tips</h3>
+            <p>Share clips, tips and tricks with other players.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>How to join</h2>
+        <ol class="steps">
+          <li><span class="num">1</span> Click the "Join the Discord" button</li>
+          <li><span class="num">2</span> Accept the invite in Discord</li>
+          <li><span class="num">3</span> Pick your roles and say hi in #general</li>
+        </ol>
+      </section>
+
+      <section class="panel">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Is there a Throw Food For Animals Discord server?</summary>
+          <p>Yes! Join at discord.gg/throwfoodforanimals for updates, news and codes.</p>
+        </details>
+        <details>
+          <summary>Who runs this server?</summary>
+          <p>It's a fan-made community run by players, not by the game's developers or by Roblox.</p>
+        </details>
+        <details>
+          <summary>How do I join?</summary>
+          <p>Click the "Join the Discord" button, or open discord.gg/throwfoodforanimals in the Discord app.</p>
+        </details>
+      </section>
+
+      <section class="panel cta">
+        <h2>Ready to throw some food?</h2>
+        <p>Hop in and never miss an update.</p>
+        <a class="btn yellow" href="https://discord.gg/throwfoodforanimals" rel="noopener">Join the Discord</a>
+      </section>
+    </main>
+  </div>
 
   <footer>
     Fan site. Not affiliated with Roblox Corporation or the developers of Throw Food For Animals.
